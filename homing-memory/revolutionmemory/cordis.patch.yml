@@ -1,0 +1,4 @@
+# dsh-revolutionmemory bundle 层：把本插件挂进 dsh 的 entry 树
+- insert:
+    - id: revolutionmemory
+      name: dsh-revolutionmemory

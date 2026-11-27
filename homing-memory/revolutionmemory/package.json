@@ -1,0 +1,24 @@
+﻿{
+    "name":  "dsh-revolutionmemory",
+    "version":  "0.5.3",
+    "description":  "fubi 的记忆插件：热区（记忆/HOT.md）注入系统提示（section 写法），冷区按需检索",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib",
+                  "cordis.patch.yml"
+              ],
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            },
+    "engines":  {
+                    "node":  "\u003e=20"
+                },
+    "license":  "MIT"
+}

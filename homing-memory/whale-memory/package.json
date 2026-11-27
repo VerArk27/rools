@@ -1,0 +1,71 @@
+{
+  "name": "dsh-whale-memory",
+  "version": "0.28.16",
+  "type": "module",
+  "private": false,
+  "description": "Proactive memory for DeepSeek Harness: emotion-aware recall, real BGE vectors, SQLite storage, and periodic associative rumination. Zero JS dependencies.",
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./client": "./client.js"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "ruminate.js",
+    "embed_server.py",
+    "README.md",
+    "INSTALL.md",
+    "CHANGELOG.md",
+    "scripts"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.mjs && node --check client.js && node tests/test-selfcheck.mjs && node tests/test-routes.mjs && node tests/test-client.mjs && node tests/test-new-modules.mjs && node tests/test-scenes.mjs && node tests/test-desk.mjs && node tests/test-fts.mjs && node tests/test-recall.mjs && node tests/test-handover.mjs && node tests/test-memory-tidy.mjs && node tests/test-consolidate.mjs && node tests/test-facts.mjs && node tests/test-evidence.mjs",
+    "test": "node tests/test-selfcheck.mjs && node tests/test-routes.mjs && node tests/test-client.mjs && node tests/test-new-modules.mjs && node tests/test-scenes.mjs && node tests/test-desk.mjs && node tests/test-fts.mjs && node tests/test-recall.mjs && node tests/test-handover.mjs && node tests/test-memory-tidy.mjs && node tests/test-consolidate.mjs && node tests/test-facts.mjs && node tests/test-evidence.mjs",
+    "ruminate": "node ruminate.js",
+    "check:all": "node scripts/check-all.mjs",
+    "sync-shared": "node scripts/sync-shared.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "export": "node scripts/export-memory.mjs",
+    "tidy": "node scripts/memory-tidy.mjs"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "memory",
+    "context",
+    "token-optimization",
+    "embeddings",
+    "sqlite",
+    "proactive-memory"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": false,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljm-233/dsh-whale-memory.git"
+  },
+  "homepage": "https://github.com/ljm-233/dsh-whale-memory#readme",
+  "bugs": {
+    "url": "https://github.com/ljm-233/dsh-whale-memory/issues"
+  },
+  "author": "ljm-233",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}
